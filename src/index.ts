@@ -1,18 +1,19 @@
-import express from 'express';
+
 import dotenv from 'dotenv';
 import askRoute from './routes/ask.js';
 import { info } from 'console';
+import { serve } from '@hono/node-server';
+import { Hono } from 'hono';
+import { allRoutes } from './routes/routes.js';
+
 
 dotenv.config();
 
-const app = express();
-app.use(express.json());
-app.use('/ask', askRoute);
+const app = new Hono();
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port http://localhost:${PORT}`);
+app.route("/",allRoutes)
+
+serve((app),({port}) =>{
+  console.log(`Server is running on http://localhost:${port}`);
 });
-
-
 
