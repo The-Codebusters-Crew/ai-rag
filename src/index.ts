@@ -1,5 +1,5 @@
 
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 import askRoute from './routes/ask.js';
 import { info } from 'console';
 import { serve } from '@hono/node-server';

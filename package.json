@@ -1,5 +1,5 @@
 {
-  "name": "ai-rag",
+  "name": "airag",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",

@@ -22,7 +22,7 @@
 
 
 import axios from 'axios';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 
