@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "postbuild": "xcopy /E /I /Y src\\generated dist\\generated",
+
     "start": "node dist/index.js"
   },
   "dependencies": {
