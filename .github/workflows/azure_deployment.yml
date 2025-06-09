@@ -6,11 +6,11 @@ on:
 env:
   AZURE_REGION: centralindia
   RESOURCE_GROUP: FirstBrain
-  CONTAINER_APPS_ENVIRONMENT: SecondBrainContainerAppsEnvironment
-  LOG_ANALYTICS_WORKSPACE: SecondBrainLogAnalyticsWorkspace
-  ACR_REGISTRY: secondbrainneuronote.azurecr.io
-  ACR_REPOSITORY_NAME: secondbrain
-  CONTAINER_APP_NAME: secondbrain
+  CONTAINER_APPS_ENVIRONMENT: FirstBrainContainerAppsEnvironment
+  LOG_ANALYTICS_WORKSPACE: FirstBrainLogAnalyticsWorkspace
+  ACR_REGISTRY: firstbrain.azurecr.io
+  ACR_REPOSITORY_NAME: FirstBrain
+  CONTAINER_APP_NAME: FirstBrain1
   TARGET_PORT: 3001
 jobs:
   build-and-deploy:
@@ -22,7 +22,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          creds: ${{ secrets.AZURE_GITHUB_ACTIONS }}
+          creds: ${{ secrets.AZURE_SECRETS}}
       # INFRA ENSURE BLOCKS
       - name: Check Resource Group exists
         run: |
