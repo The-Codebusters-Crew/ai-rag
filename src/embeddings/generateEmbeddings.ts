@@ -34,6 +34,10 @@ export async function generateEmbedding(text: string) {
   });
 
   try {
+    interface MistralEmbeddingResponse {
+      data: { embedding: number[] }[];
+    }
+
     const response = await axios.post(
       'https://api.mistral.ai/v1/embeddings',
       {
@@ -48,7 +52,8 @@ export async function generateEmbedding(text: string) {
       }
     );
 
-    return response.data.data[0].embedding;
+    const responseData = response.data as MistralEmbeddingResponse;
+    return responseData.data[0].embedding;
   } catch (error: any) {
     console.error('❌ Mistral Error:', error.response?.data || error.message);
     throw error;

@@ -1,4 +1,7 @@
-export function buildPrompt(question, contexts) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildPrompt = buildPrompt;
+function buildPrompt(question, contexts) {
     const contextText = contexts.map((ctx, idx) => `${idx + 1}. ${ctx}`).join('\n');
     return `Answer the following question using the provided context.\n\nContext:\n${contextText}\n\nQuestion: ${question}\n\nAnswer:`;
 }
@@ -17,3 +20,4 @@ export function buildPrompt(question, contexts) {
 // - Do not include tags here.
 // Answer:`;
 // }
+//# sourceMappingURL=buildprompt.js.map

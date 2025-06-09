@@ -1,0 +1,1 @@
+{"version":3,"file":"client.js","sourceRoot":"","sources":["../../src/pinecone/client.ts"],"names":[],"mappings":";;;;;;AAAA,0DAAuD;AACvD,oDAA4B;AAE5B,gBAAM,CAAC,MAAM,EAAE,CAAC;AAEH,QAAA,QAAQ,GAAG,IAAI,mBAAQ,CAAC;IACnC,MAAM,EAAE,OAAO,CAAC,GAAG,CAAC,gBAAiB;IACrC,iEAAiE;CAClE,CAAC,CAAC"}

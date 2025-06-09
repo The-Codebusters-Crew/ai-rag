@@ -3,8 +3,16 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+interface MistralChatCompletionResponse {
+  choices: {
+    message: {
+      content: string;
+    };
+  }[];
+}
+
 export async function queryLLM(prompt: string): Promise<string> {
-  const response = await axios.post(
+  const response = await axios.post<MistralChatCompletionResponse>(
     'https://api.mistral.ai/v1/chat/completions',
     {
       model: 'mistral-large-latest',
